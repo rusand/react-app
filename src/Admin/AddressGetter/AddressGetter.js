@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import StayingTime from './StayingTime/StayingTime'
 import style from './style.less';
 
 class AddressGetter extends React.Component {
@@ -10,12 +10,10 @@ class AddressGetter extends React.Component {
         <div className={style.greeting}>Home address</div>
         <div>Please enter the director’s home address for the last 3 years.</div>
         <div className={style.splitter}></div>
+        <div><StayingTime /></div>
       </div>
     </Fragment>;
   }
 }
-
-AddressGetter.propTypes = {
-};
 
 export default AddressGetter;
