@@ -1,7 +1,6 @@
-import 'theme/semantic.less';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AddressGetter from './AddressGetter/AddressGetter';
 
 // import createHistory from 'history/createBrowserHistory';
 // import { syncHistoryWithStore, RouterStore } from 'mobx-react-router';
@@ -20,4 +19,4 @@ const stores = {
 };
 */
 
-ReactDOM.render(<div>hello</div>, document.getElementById('root'));
+ReactDOM.render(<AddressGetter />, document.getElementById('root'));

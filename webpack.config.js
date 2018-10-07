@@ -70,7 +70,17 @@ module.exports = {
           fallback: {
             loader: 'style-loader'
           },
-          use: ['css-loader', 'less-loader']
+          use: [
+            {
+              loader: 'css-loader', query: {
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+                sourceMap: true
+              }
+            },
+            { loader: 'less-loader' },
+          ]
         })
       },
       {
