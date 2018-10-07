@@ -1,10 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Questrial', sans-serif;
+  color: #ffffff;
+}
+
 .topBlock {
-  background-image: linear-gradient(red, yellow);
+  background-image: linear-gradient(to right, #38daf5, #32c6e6);
   height: 100px;
 }
 
 .mainBlock {
-  background-image: linear-gradient(red, yellow);
+  background-image: linear-gradient(to bottom right, #22d5f3, #17a7d0);
   height: 100%;
+  text-align: center;
+
+  .greeting {
+    padding: 30px 0 20px 0;
+    font-family: 'Fredoka One', cursive;
+    font-size: 28px;
+  }
+
+  .info {
+    font-size: 18px;
+  }
+
+  .splitter {
+    background: #38cfec;
+    width: 500px;
+    height: 6px;
+    margin: 20px auto 20px auto;
+    border-radius: 2px;
+  }
 }
 
