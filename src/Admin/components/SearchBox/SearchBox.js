@@ -6,23 +6,35 @@ import style from './style.less';
 const cn = classnames.bind(style);
 
 class SearchBox extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      text: '',
+      text: props.text,
     };
   }
 
-  onSearch= () => {
+  onSearch = () => {
     if (this.props.onSearch) {
       this.props.onSearch(this.state.text);
     }
   }
 
+  onChange = (event) => {
+    this.setState({text: event.target.value});
+  }
+
+  onKeyPress = (event) => {
+    if(event.charCode === 13){
+        this.onSearch();
+    }
+  }
+
   render() {
     return <div className={style.search}>
-      <input placeholder={this.props.placeholder} onChange={(value) => this.setState({text: value})}/>
+      <div className={style.searchInput}>
+        <input placeholder={this.props.placeholder} onChange={this.onChange} onKeyPress={this.onKeyPress} value={this.state.text} />
+      </div>
       <span className={cn('fa-search', 'fa', style.fa_search)} onClick={() => this.onSearch()}></span>
     </div>;
   }
@@ -30,6 +42,7 @@ class SearchBox extends React.Component {
 
 SearchBox.propTypes = {
   placeholder: PropTypes.string,
+  text: PropTypes.string,
   onSearch: PropTypes.func
 };
 

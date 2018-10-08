@@ -4,13 +4,13 @@ import style from './style.less';
 import SearchBox from '../../components/SearchBox/SearchBox'
 
 class StayingTime extends React.Component {
-  onSearch = () => {
-    alert(1);
+  onSearch = (e) => {
+    alert(e);
   }
 
   render() {
     return <Fragment>
-      <SearchBox placeholder={'Zip code'} onSearch={this.onSearch} />
+      <div className={style.searchBox}><SearchBox placeholder={'Zip code'} onSearch={this.onSearch} text={'serach text'} /></div>
     </Fragment>;
   }
 }
