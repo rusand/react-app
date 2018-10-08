@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import StayingTime from './StayingTime/StayingTime'
 import style from './style.less';
+import Button from '../components/Button/Button';
 
 class AddressGetter extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class AddressGetter extends React.Component {
         <div>Please enter the director’s home address for the last 3 years.</div>
         <div className={style.splitter}></div>
         <div><StayingTime /></div>
+        <div><Button /></div>
       </div>
     </Fragment>;
   }
