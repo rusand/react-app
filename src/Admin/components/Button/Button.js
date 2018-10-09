@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
 import style from './style.less';
-
-const cn = classnames.bind(style);
 
 class Button extends React.Component {
   onClick = () => {
@@ -12,16 +9,7 @@ class Button extends React.Component {
     }
   }
 
-  onKeyPress = (event) => {
-    if(event.charCode === 13){
-        this.onClick();
-    }
-  }
-
   render() {
-    // return <div className={style.buttonWrapper}>
-    //   <div className={style.buttonText}>{this.props.text}</div>
-    // </div>;
     return <button className={style.button}>
       {this.props.text}
     </button>;
