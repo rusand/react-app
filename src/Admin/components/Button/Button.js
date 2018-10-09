@@ -6,41 +6,32 @@ import style from './style.less';
 const cn = classnames.bind(style);
 
 class Button extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      text: props.text,
-    };
-  }
-
-  onSearch = () => {
-    if (this.props.onSearch) {
-      this.props.onSearch(this.state.text);
+  onClick = () => {
+    if (this.props.onClick) {
+      this.props.onClick();
     }
-  }
-
-  onChange = (event) => {
-    this.setState({text: event.target.value});
   }
 
   onKeyPress = (event) => {
     if(event.charCode === 13){
-        this.onSearch();
+        this.onClick();
     }
   }
 
   render() {
-    return <div className={style.button}>
-      Conﬁrm and continue
-    </div>;
+    // return <div className={style.buttonWrapper}>
+    //   <div className={style.buttonText}>{this.props.text}</div>
+    // </div>;
+    return <button className={style.button}>
+      {this.props.text}
+    </button>;
   }
 }
 
 Button.propTypes = {
-  placeholder: PropTypes.string,
+  text: PropTypes.string,
   width: PropTypes.string,
-  onSearch: PropTypes.func
+  onClick: PropTypes.func
 };
 
 export default Button;

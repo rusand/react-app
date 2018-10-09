@@ -12,7 +12,7 @@ class AddressGetter extends React.Component {
         <div>Please enter the director’s home address for the last 3 years.</div>
         <div className={style.splitter}></div>
         <div><StayingTime /></div>
-        <div><Button /></div>
+        <div className={style.continueBtn}><Button text={`Confirm and continue`}/></div>
       </div>
     </Fragment>;
   }
